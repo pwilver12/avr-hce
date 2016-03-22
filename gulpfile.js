@@ -102,13 +102,18 @@ gulp.task('deploy-js', function() {
         .pipe(conn.dest('/portals/2124715-avnet_riverbed/content/templates/custom/page/avr'));
 });
 
+gulp.task('deploy', function() {
+    gulp.run('deploy-css');
+    gulp.run('deploy-js');
+});
+
 gulp.task('serve', function() {
     browserSync.init({
         server: "./"
     });
 
-    gulp.watch(paths.src.sass, ['sass', 'deploy-css']);
-    gulp.watch(paths.src.js, ['js', 'deploy-js']);
+    gulp.watch(paths.src.sass, ['sass']);
+    gulp.watch(paths.src.js, ['js']);
     gulp.watch(paths.src.html, ['html']);
 });
 
