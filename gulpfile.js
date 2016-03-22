@@ -76,7 +76,7 @@ gulp.task('html', function() {
         .on('end', reload);
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy-css', function() {
     var conn = ftp.create({
         host: 'ftp.hubapi.com',
         user: 'pwilver12@gmail.com',
@@ -85,12 +85,20 @@ gulp.task('deploy', function() {
         secure: true
     });
 
-    var globs = [
-        paths.dest.css,
-        paths.dest.js
-    ];
+    return gulp.src(['build/css/styles.css'], { buffer: false })
+        .pipe(conn.dest('/portals/2124715-avnet_riverbed/content/templates/custom/page/avr'));
+});
 
-    return gulp.src(globs, { base: '.', buffer: false })
+gulp.task('deploy-js', function() {
+    var conn = ftp.create({
+        host: 'ftp.hubapi.com',
+        user: 'pwilver12@gmail.com',
+        password: 'Ltlec0met0',
+        port: 3200,
+        secure: true
+    });
+
+    return gulp.src(['build/js/bundle.js'], { buffer: false })
         .pipe(conn.dest('/portals/2124715-avnet_riverbed/content/templates/custom/page/avr'));
 });
 
@@ -99,8 +107,8 @@ gulp.task('serve', function() {
         server: "./"
     });
 
-    gulp.watch(paths.src.sass, ['sass', 'deploy']);
-    gulp.watch(paths.src.js, ['js', 'deploy']);
+    gulp.watch(paths.src.sass, ['sass', 'deploy-css']);
+    gulp.watch(paths.src.js, ['js', 'deploy-js']);
     gulp.watch(paths.src.html, ['html']);
 });
 
