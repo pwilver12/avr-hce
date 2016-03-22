@@ -10,6 +10,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var cssnano = require('gulp-cssnano');
 var concat = require('gulp-concat');
+var ftp = require('vinyl-ftp');
 
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
@@ -75,13 +76,31 @@ gulp.task('html', function() {
         .on('end', reload);
 });
 
+gulp.task('deploy', function() {
+    var conn = ftp.create({
+        host: 'ftp.hubapi.com',
+        user: 'pwilver12@gmail.com',
+        password: 'Ltlec0met0',
+        port: 3200,
+        secure: true
+    });
+
+    var globs = [
+        paths.dest.sass,
+        paths.dest.js
+    ];
+
+    return gulp.src(globs, { base: '.', buffer: false })
+        .pipe(conn.dest('/portals/2124715-avnet_riverbed/content/templates/custom/page/avr'));
+});
+
 gulp.task('serve', function() {
     browserSync.init({
         server: "./"
     });
 
-    gulp.watch(paths.src.sass, ['sass']);
-    gulp.watch(paths.src.js, ['js']);
+    gulp.watch(paths.src.sass, ['sass', 'deploy']);
+    gulp.watch(paths.src.js, ['js', 'deploy']);
     gulp.watch(paths.src.html, ['html']);
 });
 
