@@ -1,9 +1,19 @@
+@import ./src/sass/partials/fonts
+
 html, body
-	background: gray
-	color: #fff
-	font-family: sans-serif
+	font-family: $source-sans
+	font-size: 1em
 	margin: 0
 	padding: 0
 
 	*
 		box-sizing: border-box
+
+// HTML5 elements (for support on older browsers)
+header, section, footer, aside, nav, main, article, figure
+	display: block
+
+.page-width-normal
+	max-width: 1080px
+	margin: 0 auto
+	padding: 0 30px
