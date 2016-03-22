@@ -1,12 +1,16 @@
-var slider = {
+var pdfSlider = {
 	init: function() {
-		$('.slider').slick({
-			vertical: true,
-			easing: 'swing'
-		});
+		// 
+	}
+}
+
+var quoteSlider = {
+	init: function() {
+		// 
 	}
 }
 
 $(function() {
-	slider.init();
+	pdfSlider.init();
+	quoteSlider.init();
 });
