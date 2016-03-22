@@ -86,7 +86,7 @@ gulp.task('deploy', function() {
     });
 
     var globs = [
-        paths.dest.sass,
+        paths.dest.css,
         paths.dest.js
     ];
 
