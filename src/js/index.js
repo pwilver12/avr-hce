@@ -1,6 +1,3 @@
-var $ = require('jquery');
-var slick = require('./libs/slick.min.js');
-
 var slider = {
 	init: function() {
 		$('.slider').slick({
