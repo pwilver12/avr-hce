@@ -51,7 +51,9 @@ gulp.task('sass', ['clean:css'], function() {
             ]
         })).on('error', sass.logError)
         .pipe(autoprefixer())
-        .pipe(cssnano())
+        .pipe(cssnano({
+            zindex: false
+        }))
         .pipe(concat('styles.css'))
         .pipe(gulp.dest(paths.dest.css))
         .pipe(browserSync.stream());
