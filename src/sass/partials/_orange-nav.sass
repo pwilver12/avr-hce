@@ -1,0 +1,49 @@
+@import ./src/sass/partials/colors
+
+.fixed-nav--wrapper
+	overflow: hidden
+	background: $orange
+	width: 100%
+	padding: 30px 0
+
+	&.fixed-top
+		position: fixed
+		top: 0
+
+		.fixed-nav__logos
+			top: 0
+			opacity: 1
+
+.fixed-nav__left
+	position: relative
+	float: left
+
+	h3
+		color: #fff
+
+.fixed-nav__logos
+	display: block
+	position: relative
+	top: -85px
+	opacity: 0
+	transition: all 0.8s ease
+
+	img
+		display: inline-block
+		position: absolute
+
+		&.logo--riverbed
+			top: 0
+			left: 0
+			border-right: 1px solid #fff
+			padding-right: 20px
+
+		&.logo--avnet
+			top: 12px
+			left: 212px
+
+.fixed-nav__right
+	float: right
+
+.partner--wrapper
+	height: 1000px
