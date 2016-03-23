@@ -27,7 +27,7 @@ var app = {
 				return false;
 			} else {
 				$('.fixed-nav--wrapper').addClass('fixed-top');
-				$('.partner--wrapper').css({ 'margin-top': $('.fixed-nav--wrapper').innerHeight() + 'px' });
+				$('.partner--wrapper').css({ 'margin-top': ($('.fixed-nav--wrapper').innerHeight() - 28) + 'px' });
 			}
 		} else {
 			if ($('.fixed-top').length > 0) {
