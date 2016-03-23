@@ -1,6 +1,12 @@
 @import ./src/sass/partials/colors
 @import ./src/sass/partials/fonts
 
+
+// HubSpot framework overwrites
+.row-fluid
+	[class*="span"]
+		min-height: 0 !important
+
 html, body
 	color: $baseFontColor
 	font-family: $source-sans
@@ -14,6 +20,14 @@ html, body
 // HTML5 elements (for support on older browsers)
 header, section, footer, aside, nav, main, article, figure
 	display: block
+
+section
+	padding-top: 60px
+	padding-bottom: 60px
+
+p
+	margin-top: 13px
+	margin-bottom: 13px
 
 a
 	color: $blue
