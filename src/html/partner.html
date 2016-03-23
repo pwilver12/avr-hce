@@ -1,0 +1,9 @@
+{% image 'partner_logo' label="Partner Bio: Logo", src="", export_to_template_context=True %}
+{% textarea 'partner_desc' label='Partner Bio: Description', value="", export_to_template_context=True %}
+
+<section class="partner--wrapper">
+	<div class="page-width-normal">
+		<img src="{{ widget_data.partner_logo.src }}" alt="{{ widget_data.partner_logo.alt }}">
+		<p class="h2">{{ widget_data.partner_desc.value }}</p>
+	</div>
+</section>
