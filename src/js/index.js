@@ -1,6 +1,4 @@
 var app = {
-	fixedNavTop: null,
-
 	init: function() {
 		// Init other vars
 		pdfSlider.init();
@@ -13,18 +11,18 @@ var app = {
 	eventBindings: function() {
 		// On window load
 		$(window).load(function() {
-			app.fixedNavTop = app.fixedNavTop || $('.fixed-nav--wrapper').offset().top;
+			var navOffset = $('.hero--wrapper').innerHeight();
 
 			// On window scroll
 			$(window).scroll(function() {
-				app.onScroll();
+				app.fixNavToTop(navOffset);
 			});
 		});
 	},
 
-	onScroll: function() {
+	fixNavToTop: function(offset) {
 		// Fix nav to top
-		if ($(window).scrollTop() > app.fixedNavTop) {
+		if ($(window).scrollTop() > offset) {
 			if ($('.fixed-nav--wrapper').hasClass('fixed-top')) {
 				return false;
 			} else {
