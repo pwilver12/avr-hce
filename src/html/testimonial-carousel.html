@@ -3,10 +3,11 @@
 		<h2 class="slider__header">{{ widget.testimonials_header }}</h2>
 		<p class="mobile--swipe mobile--show">(Swipe to view more)</p>
 		<div class="testimonials__slider">
+			{% if widget.quote1 %}
 			<div class="testimonials__slider--item">
 				<p class="testimonials__quote h3">&ldquo;{{ widget.quote1 }}&rdquo;</p>
 				<p class="testimonials__byline">&ndash; {{ widget.byline1 }}</p>
-				<img src="" alt="">
+				<img src="{{ widget.logo1.src }}" alt="{{ widget.logo1.alt }}">
 				<p class="testimonials__origin">
 					{% if widget.quote_origin1 == 'yes' %}
 					Quote is from a Riverbed customer.
@@ -15,10 +16,12 @@
 					{% endif %}
 				</p>
 			</div>
+			{% endif %}
+			{% if widget.quote2 %}
 			<div class="testimonials__slider--item">
 				<p class="testimonials__quote h3">&ldquo;{{ widget.quote2 }}&rdquo;</p>
 				<p class="testimonials__byline">&ndash; {{ widget.byline2 }}</p>
-				<img src="" alt="">
+				<img src="{{ widget.logo2.src }}" alt="{{ widget.logo2.alt }}">
 				<p class="testimonials__origin">
 					{% if widget.quote_origin2 == 'yes' %}
 					Quote is from a Riverbed customer.
@@ -27,10 +30,12 @@
 					{% endif %}
 				</p>
 			</div>
+			{% endif %}
+			{% if widget.quote3 %}
 			<div class="testimonials__slider--item">
 				<p class="testimonials__quote h3">&ldquo;{{ widget.quote3 }}&rdquo;</p>
 				<p class="testimonials__byline">&ndash; {{ widget.byline3 }}</p>
-				<img src="" alt="">
+				<img src="{{ widget.logo3.src }}" alt="{{ widget.logo3.alt }}">
 				<p class="testimonials__origin">
 					{% if widget.quote_origin3 == 'yes' %}
 					Quote is from a Riverbed customer.
@@ -39,10 +44,12 @@
 					{% endif %}
 				</p>
 			</div>
+			{% endif %}
+			{% if widget.quote4 %}
 			<div class="testimonials__slider--item">
 				<p class="testimonials__quote h3">&ldquo;{{ widget.quote4 }}&rdquo;</p>
 				<p class="testimonials__byline">&ndash; {{ widget.byline4 }}</p>
-				<img src="" alt="">
+				<img src="{{ widget.logo4.src }}" alt="{{ widget.logo4.alt }}">
 				<p class="testimonials__origin">
 					{% if widget.quote_origin4 == 'yes' %}
 					Quote is from a Riverbed customer.
@@ -51,10 +58,12 @@
 					{% endif %}
 				</p>
 			</div>
+			{% endif %}
+			{% if widget.quote5 %}
 			<div class="testimonials__slider--item">
 				<p class="testimonials__quote h3">&ldquo;{{ widget.quote5 }}&rdquo;</p>
 				<p class="testimonials__byline">&ndash; {{ widget.byline5 }}</p>
-				<img src="" alt="">
+				<img src="{{ widget.logo5.src }}" alt="{{ widget.logo5.alt }}">
 				<p class="testimonials__origin">
 					{% if widget.quote_origin5 == 'yes' %}
 					Quote is from a Riverbed customer.
@@ -63,6 +72,7 @@
 					{% endif %}
 				</p>
 			</div>
+			{% endif %}
 		</div>
 		<div class="slider-arrows--wrapper testimonials__arrows"></div>
 	</div>
