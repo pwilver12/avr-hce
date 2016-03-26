@@ -37,6 +37,20 @@ var app = {
 			app.buildVideoModal(src);
 			app.videoModal.show();
 		});
+
+		// On 'Request Meeting' click
+		$('.request-meeting').click(function(e) {
+			e.preventDefault();
+
+			$('.form-modal__request-meeting').addClass('active');
+		});
+
+		// Form modal close
+		$('.form-modal--close').click(function(e) {
+			e.preventDefault();
+
+			$(this).closest('.modal--wrapper').removeClass('active');
+		});
 	},
 
 	modalEventBindings: function() {
