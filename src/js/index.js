@@ -4,7 +4,6 @@ var app = {
 	videoModal: null,
 
 	init: function() {
-		// Fixed nav offset
 		this.eventBindings();
 		this.initSliders();
 	},
@@ -46,11 +45,11 @@ var app = {
 		});
 
 		// On PDF download links click
-		$('.assets__slider--item').click(function(e) {
+		$('.assets__slider--item a').click(function(e) {
 			e.preventDefault();
-			console.log('clicked');
 
-			// $('.form-modal__pdf-download').addClass('active');
+			var $pdfSlide = $(this).closest('.assets__slider--item');
+			app.updatePdfModalAssets($pdfSlide);
 		});
 
 		// Form modal close
@@ -139,12 +138,24 @@ var app = {
 		});
 	},
 
-	showAssetsForm: function() {
-		// 
-	},
+	updatePdfModalAssets: function(slide) {
+		var pdfTitle = slide.find('.assets__title').text(),
+			imageSrc = slide.find('img').attr('src'),
+			imageAlt = slide.find('img').attr('alt'),
+			source = slide.data('source');
 
-	redirectToAsset: function() {
-		// 
+		// Update pdf image in modal
+		$('.form-modal__pdf-download').find('.form-modal__pdf-image')
+			.attr('src', imageSrc)
+			.attr('alt', imageAlt)
+			.data('source', source);
+
+		// Update 'Downloaded PDF' hidden field
+		$('.form-modal__pdf-download').find('input[name="downloaded_pdf"]')
+			.val(pdfTitle)
+			.change();
+
+		$('.form-modal__pdf-download').addClass('active');
 	}
 }
 
