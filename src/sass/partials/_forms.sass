@@ -1,0 +1,88 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
+@import ./src/sass/partials/colors
+@import ./src/sass/partials/fonts
+
+
+%field-styles
+	appearance: none
+	outline: none
+	font-family: $source-sans
+	font-size: 16px
+
+%field-not-submit
+	color: $baseFontColor
+	border: 0
+	border-bottom: 3px solid $ltGrey
+	width: 95%
+	min-height: 28px
+	+breakpoint($break-tablet)
+		width: 100% !important
+
+.hs-form
+	margin: 0 20px
+	padding-top: 30px
+	+breakpoint($break-tablet)
+		margin: 0
+
+	fieldset
+		max-width: none !important
+
+		&.form-columns-2, &.form-columns-3
+			.hs-form-field
+				+breakpoint($break-tablet)
+					float: none !important
+					width: 100% !important
+			.input
+				+breakpoint($break-tablet)
+					margin-right: 0 !important
+
+	label
+		display: inline-block
+		color: $blue
+		font-size: 14px
+		font-weight: $light
+		margin-bottom: 8px
+
+	input
+		@extend %field-styles
+
+		&:not([type="submit"])
+			@extend %field-not-submit
+			padding: 8px 5px
+
+	select
+		@extend %field-styles
+		@extend %field-not-submit
+		cursor: pointer
+		background: $offWhite url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/chevron_drop.png') no-repeat
+		background-position: 96% 45%
+		background-size: 20px
+		border-radius: 0
+		padding: 8px 40px 8px 5px
+
+	::placeholder
+		color: $ltGrey
+		font-weight: $light
+
+	input[type=submit]
+		width: auto
+
+	.hs-form-field
+		margin-bottom: 20px
+
+	.hs_submit
+		margin-top: 30px
+		+breakpoint($break-tablet)
+			text-align: center
+
+	.hs-error-msgs
+		list-style: none
+		margin: 0 8px 0 0
+		padding: 0
+
+		label
+			color: $orange
+			max-width: 95%
+			margin-top: 5px

@@ -1,0 +1,54 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
+@import ./src/sass/partials/colors
+@import ./src/sass/partials/fonts
+
+
+%form-modal-close
+	content: ''
+	display: block
+	position: absolute
+	top: 17px
+	background: $ltGrey
+	border-radius: 2px
+	width: 20px
+	height: 2px
+
+.form-modal--inner
+	position: relative
+	background-color: #fff
+	max-width: 800px
+	margin: 50px auto 0
+	padding: 50px 30px
+	+breakpoint($break-tablet)
+		margin: 20px auto 0
+
+	h2
+		text-align: center
+		font-weight: $bold
+
+		span
+			color: $blue
+
+.form-modal--close
+	cursor: pointer
+	display: inline-block
+	position: absolute
+	top: 10px
+	right: 10px
+	background: transparent
+	border: 2px solid $ltGrey
+	border-radius: 20px
+	width: 40px
+	height: 40px
+
+	&:before
+		@extend %form-modal-close
+		left: 8px
+		transform: rotate(45deg)
+
+	&:after
+		@extend %form-modal-close
+		right: 8px
+		transform: rotate(-45deg)
