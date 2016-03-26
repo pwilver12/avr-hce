@@ -1,3 +1,7 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
+
 %slick-arrow
 	appearance: none
 	cursor: pointer
@@ -25,3 +29,9 @@
 	@extend %slick-arrow
 	background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/right-arrow.png') no-repeat center
 	background-size: cover
+
+.slider-arrows--wrapper
+	text-align: center
+	padding-top: 40px
+	+breakpoint($break-phone)
+		display: none
