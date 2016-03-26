@@ -1,80 +1,108 @@
-<div class="assets--wrapper">
+<section class="assets--wrapper slider--wrapper">
 	<div class="page-width-normal">
 		<h2 class="slider__header">Learn More</h2>
 		<div class="assets__slider">
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% if widget.asset1_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset1_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset1_image.src }}" alt="{{ widget.asset1_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset1_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset1_title }}</p>
+				<a class="assets__link">{{ widget.asset1_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset2_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset2_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset2_image.src }}" alt="{{ widget.asset2_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset2_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset2_title }}</p>
+				<a class="assets__link">{{ widget.asset2_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset3_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset3_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset3_image.src }}" alt="{{ widget.asset3_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset3_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset3_title }}</p>
+				<a class="assets__link">{{ widget.asset3_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset4_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset4_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset4_image.src }}" alt="{{ widget.asset4_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset4_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset4_title }}</p>
+				<a class="assets__link">{{ widget.asset4_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset5_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset5_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset5_image.src }}" alt="{{ widget.asset5_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset5_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset5_title }}</p>
+				<a class="assets__link">{{ widget.asset5_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset6_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset6_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset6_image.src }}" alt="{{ widget.asset6_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset6_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset6_title }}</p>
+				<a class="assets__link">{{ widget.asset6_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset7_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset7_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset7_image.src }}" alt="{{ widget.asset7_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset7_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset7_title }}</p>
+				<a class="assets__link">{{ widget.asset7_urlText }}</a>
 			</div>
-			<div class="assets__slider--item">
-				<a href="" class="assets__image">
-					<img src="" alt="">
+			{% endif %}
+			{% if widget.asset8_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset8_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset8_image.src }}" alt="{{ widget.asset8_image.alt }}">
 				</a>
-				<h4 class="assets__title"></h4>
-				<p class="assets__subtitle"></p>
-				<a href="" class="assets__link"></a>
-				<p class="assets__origin"></p>
+				<h4 class="assets__tagline">{{ widget.asset8_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset8_title }}</p>
+				<a class="assets__link">{{ widget.asset8_urlText }}</a>
 			</div>
+			{% endif %}
+			{% if widget.asset9_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset9_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset9_image.src }}" alt="{{ widget.asset9_image.alt }}">
+				</a>
+				<h4 class="assets__tagline">{{ widget.asset9_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset9_title }}</p>
+				<a class="assets__link">{{ widget.asset9_urlText }}</a>
+			</div>
+			{% endif %}
+			{% if widget.asset10_url %}
+			<div class="assets__slider--item" data-source="{{ widget.asset10_url }}">
+				<a class="assets__image">
+					<img src="{{ widget.asset10_image.src }}" alt="{{ widget.asset10_image.alt }}">
+				</a>
+				<h4 class="assets__tagline">{{ widget.asset10_tagline }}</h4>
+				<p class="assets__title">{{ widget.asset10_title }}</p>
+				<a class="assets__link">{{ widget.asset10_urlText }}</a>
+			</div>
+			{% endif %}
 		</div>
 		<div class="slider-arrows--wrapper assets__arrows"></div>
 	</div>
-</div>
+</section>
