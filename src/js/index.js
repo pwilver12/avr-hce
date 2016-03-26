@@ -45,6 +45,13 @@ var app = {
 			$('.form-modal__request-meeting').addClass('active');
 		});
 
+		// On PDF download links click
+		$('.assets__slider--item a').click(function(e) {
+			e.preventDefault();
+
+			$('.form-modal__pdf-download').addClass('active');
+		});
+
 		// Form modal close
 		$('.form-modal--close').click(function(e) {
 			e.preventDefault();
