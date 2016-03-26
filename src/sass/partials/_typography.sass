@@ -1,3 +1,6 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
 @import ./src/sass/partials/fonts
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
@@ -10,15 +13,22 @@ h1, .h1
 	font-weight: $light
 	margin-top: 18px
 	margin-bottom: 18px
+	+breakpoint($break-tablet)
+		font-size: 36px
 
 h2, .h2
 	font-size: 30px
 	font-weight: $regular
 	margin-top: 13px
 	margin-bottom: 13px
+	+breakpoint($break-tablet)
+		font-size: 26px
 
 h3, .h3
 	font-size: 26px
 	font-weight: $light
+	line-height: 1.4em
 	margin-top: 13px
 	margin-bottom: 13px
+	+breakpoint($break-tablet)
+		font-size: 22px
