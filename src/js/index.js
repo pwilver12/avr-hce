@@ -4,12 +4,9 @@ var app = {
 	videoModal: null,
 
 	init: function() {
-		// Init other vars
-		pdfSlider.init();
-		quoteSlider.init();
-
 		// Fixed nav offset
 		this.eventBindings();
+		this.initSliders();
 	},
 
 	eventBindings: function() {
@@ -32,11 +29,13 @@ var app = {
 			$(this).find('video')[0].pause();
 		});
 
+		// Show video modal on click
 		$('.video__container').click(function(e) {
 			e.preventDefault();
 
 			var src = $(this).find('source').attr('src');
 			app.buildVideoModal(src);
+			app.videoModal.show();
 		});
 	},
 
@@ -90,21 +89,27 @@ var app = {
 		$('.modal-inner').append($videoWrapper);
 
 		app.modalEventBindings();
-		app.videoModal.show();
-	}
-}
+	},
 
-var pdfSlider = {
-	init: function() {
+	initSliders: function() {
+		$('.testimonials__slider').slick({
+			appendArrows: $('.testimonials__arrows')
+		});
+
+		$('.assets__slider').slick({
+			appendArrows: $('.assets__arrows')
+		});
+	},
+
+	showAssetsForm: function() {
+		// 
+	},
+
+	redirectToAsset: function() {
 		// 
 	}
 }
 
-var quoteSlider = {
-	init: function() {
-		// 
-	}
-}
 
 $(function() {
 	app.init();
