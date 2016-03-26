@@ -1,0 +1,72 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
+@import ./src/sass/partials/colors
+@import ./src/sass/partials/fonts
+
+
+// =============================
+// S L I D E R  D E F A U L T S
+// =============================
+%slick-arrow
+	appearance: none
+	cursor: pointer
+	display: inline-block
+	outline: none
+	bottom: 0
+	background: #fff
+	color: transparent
+	border: 0
+	border-radius: 20px
+	width: 40px
+	height: 40px
+	margin: 0 5px
+	opacity: 0.7
+
+	&:hover
+		opacity: 1
+
+.slick-prev
+	@extend %slick-arrow
+	background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/left-arrow.png') no-repeat center
+	background-size: cover
+
+.slick-next
+	@extend %slick-arrow
+	background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/right-arrow.png') no-repeat center
+	background-size: cover
+
+.slider__header
+	text-align: center
+
+.slider-arrows--wrapper
+	text-align: center
+	padding-top: 40px
+	+breakpoint($break-phone)
+		display: none
+
+
+// ==========================
+// T E S T I I M O N I A L S
+// ==========================
+.testimonials--wrapper
+	padding-top: 40px
+
+.testimonials__slider
+	text-align: center
+	margin-top: 20px
+
+.testimonials__quote
+	color: $blue
+	font-weight: $light
+	font-style: italic
+	padding: 0 20px
+
+.testimonials__byline
+	color: $ltGrey
+	font-size: 14px
+
+
+// ===================
+// P D F  A S S E T S
+// ===================
