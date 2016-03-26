@@ -1,5 +1,6 @@
 @import breakpoint
 
+@import ./src/sass/partials/breakpoints
 @import ./src/sass/partials/colors
 @import ./src/sass/partials/fonts
 
@@ -17,10 +18,14 @@
 	color: $blue
 	font-weight: $light
 	font-style: italic
+	padding: 0 20px
 
 .testimonial__byline
 	color: $lt-gray
+	font-size: 14px
 
 .testimonial__slider-arrows
 	text-align: center
 	padding-top: 40px
+	+breakpoint($break-phone)
+		display: none
