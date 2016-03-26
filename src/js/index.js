@@ -46,10 +46,11 @@ var app = {
 		});
 
 		// On PDF download links click
-		$('.assets__slider--item a').click(function(e) {
+		$('.assets__slider--item').click(function(e) {
 			e.preventDefault();
+			console.log('clicked');
 
-			$('.form-modal__pdf-download').addClass('active');
+			// $('.form-modal__pdf-download').addClass('active');
 		});
 
 		// Form modal close
@@ -118,7 +119,23 @@ var app = {
 		});
 
 		$('.assets__slider').slick({
-			appendArrows: $('.assets__arrows')
+			appendArrows: $('.assets__arrows'),
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 525,
+					settings: {
+						slidesToShow: 1
+					}
+				}
+			]
 		});
 	},
 
