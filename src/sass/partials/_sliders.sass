@@ -26,15 +26,19 @@
 	&:hover
 		opacity: 1
 
-.slick-prev
-	@extend %slick-arrow
-	background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/left-arrow.png') no-repeat center
-	background-size: cover
+.slider--wrapper
+	padding-top: 40px
+	padding-bottom: 40px
 
-.slick-next
-	@extend %slick-arrow
-	background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/right-arrow.png') no-repeat center
-	background-size: cover
+	.slick-prev
+		@extend %slick-arrow
+		background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/left-arrow.png') no-repeat center
+		background-size: cover
+
+	.slick-next
+		@extend %slick-arrow
+		background: url('//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/right-arrow.png') no-repeat center
+		background-size: cover
 
 .slider__header
 	text-align: center
@@ -49,9 +53,6 @@
 // ==========================
 // T E S T I I M O N I A L S
 // ==========================
-.testimonials--wrapper
-	padding-top: 40px
-
 .testimonials__slider
 	text-align: center
 	margin-top: 20px
@@ -70,3 +71,20 @@
 // ===================
 // P D F  A S S E T S
 // ===================
+.assets__slider
+	margin-top: 30px
+
+.assets__slider--item
+	text-align: center
+
+	a
+		cursor: pointer
+
+.assets__image
+	display: inline-block
+
+.assets__tagline
+	padding: 0 10px
+
+.assets__title
+	padding: 0 10px
