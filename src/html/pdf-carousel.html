@@ -1,6 +1,7 @@
 <section class="assets--wrapper slider--wrapper">
 	<div class="page-width-normal">
-		<h2 class="slider__header">Learn More</h2>
+		<h2 class="slider__header">{{ widget.assets_header }}</h2>
+		<p class="mobile--swipe mobile--show">(Swipe to view more)</p>
 		<div class="assets__slider">
 			{% if widget.asset1_url %}
 			<div class="assets__slider--item" data-source="{{ widget.asset1_url }}">
