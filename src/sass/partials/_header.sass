@@ -1,3 +1,6 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
 @import ./src/sass/partials/fonts
 
 .hero--wrapper
@@ -9,24 +12,54 @@
 
 .hero__header
 	overflow: hidden
+	text-align: center
 
 .hero__logo--wrapper
-	float: left
-
 	img
-		display: inline-block
+		+breakpoint($not-phone)
+			display: inline-block
+		+breakpoint($break-phone)
+			display: block
+			margin: 0 auto
 
 		&.logo--riverbed
 			max-width: 150px
+			+breakpoint($not-phone)
+				border-right: 1px solid #fff
+				margin-right: 10px
+				padding-right: 10px
+			+breakpoint($break-phone)
+				margin-bottom: 15px
 
 .hero__share--wrapper
+	padding-bottom: 15px
+	+breakpoint($all-desktop)
+		margin-left: 30px
 
+	p
+		display: inline-block
+		font-size: 14px
+		text-transform: uppercase
+		margin: 0
+		padding-right: 20px
+
+	.hero__share--item
+		display: inline-block
+		width: 35px
+		margin: 0 5px
+
+		img
+			display: block
 
 .hero__content--wrapper
+	position: relative
 	text-align: center
 	max-width: 650px
 	margin: 0 auto
+	padding-top: 80px
+	+breakpoint($break-tablet)
+		padding-top: 40px
 
-.hero__subhead
-	font-size: 2.5em
-	font-weight: $light
+// .hero__subhead
+// 	font-size: 2.5em
+// 	font-weight: $light
