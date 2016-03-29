@@ -12,10 +12,17 @@ var app = {
 		// On window load
 		$(window).load(function() {
 			var navOffset = $('.hero--wrapper').innerHeight();
+
+			// Check on page load to reposition header items
+			app.parallaxEffectOnHeader(navOffset);
 			app.fixNavToTop(navOffset);
+
+			// Show hero features section
+			$('*.load-delay').removeClass('load-delay');
 
 			// On window scroll
 			$(window).scroll(function() {
+				app.parallaxEffectOnHeader(navOffset);
 				app.fixNavToTop(navOffset);
 			});
 		});
@@ -65,6 +72,16 @@ var app = {
 			e.preventDefault();
 			app.videoModal.destroy();
 		});
+	},
+
+	parallaxEffectOnHeader: function(navTop) {
+		var speed = $('.hero__content--wrapper').data('speed'),
+			offset = ($(window).scrollTop()) / speed;
+
+		if ($(window).scrollTop() < navTop && $(window).width() > 767) {
+			$('.hero__content--wrapper').css({ 'transform': 'translate3d(0, ' + offset + 'px, 0)' });
+			console.log('doing it');
+		}
 	},
 
 	fixNavToTop: function(offset) {
