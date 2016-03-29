@@ -1,3 +1,6 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
 @import ./src/sass/partials/colors
 
 
@@ -22,9 +25,20 @@
 	p
 		color: #fff
 		text-align: center
+		+breakpoint($break-tablet)
+			margin-bottom: 30px
+
+.video__container--link
+	text-align: center
+
+	a
+		display: inline-block
 
 .video__container
 	position: relative
+	+breakpoint($break-tablet)
+		max-width: 450px
+		margin: 0 auto
 
 	&:hover
 		cursor: pointer
