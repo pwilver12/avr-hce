@@ -82,7 +82,6 @@ var app = {
 
 		if ($(window).scrollTop() < navTop && $(window).width() > 767) {
 			$('.hero__content--wrapper').css({ 'transform': 'translate3d(0, ' + offset + 'px, 0)' });
-			console.log('doing it');
 		}
 	},
 
@@ -120,8 +119,6 @@ var app = {
 		});
 
 		$videoWrapper.append($video).append($videoClose);
-
-		console.log($videoWrapper);
 
 		app.videoModal = new modal('video-modal');
 		app.videoModal.init(app.modalEventBindings, app);
