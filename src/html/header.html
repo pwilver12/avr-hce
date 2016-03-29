@@ -1,23 +1,37 @@
+{% choice 'page_type' label='Which landing page is this?', value='rethink', choices='[[\"rethink\", \"Rethink Branch IT\"], [\"zero\", \"Zero Branch IT\"]]', export_to_template_context=True %}
+
 <section class="hero--wrapper">
 	<div class="page-width-normal">
-		<header class="hero__header">
-			<div class="hero__logo--wrapper">
-				<img class="logo--riverbed" src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/logos/riverbed_logo.png" alt="riverbed_logo">
-				<img src="" alt="">
+		<header class="hero__header flex-wide align-start">
+			<div class="hero__share--wrapper flex align-center order-2">
+				<p class="mobile--hide">Share:</p>
+				<a href="#" class="hero__share--item">
+					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_twitter.png" alt="twitter_share">
+				</a>
+				<a href="#" class="hero__share--item">
+					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_facebook.png" alt="facebook_share">
+				</a>
+				<a href="#" class="hero__share--item">
+					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_linkedin.png" alt="linkedin_share">
+				</a>
+				<a href="#" class="hero__share--item">
+					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_gplus.png" alt="gplus_share">
+				</a>
 			</div>
-			<div class="hero__share--wrapper">
-				<p>Share</p>
-				<img src="" alt="">
-				<img src="" alt="">
-				<img src="" alt="">
-				<img src="" alt="">
+			<div class="hero__logo--wrapper flex align-center order-1">
+				<img class="logo--riverbed" src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/logos/riverbed_logo.png" alt="riverbed_logo">
+				<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/logos/avnet_logo-white.png" alt="avnet_logo">
 			</div>
 		</header>
 		<div class="hero__content--wrapper">
 			<div class="hero__headline">
-				<img src="" alt="">
+				{% if widget_data.page_type.value == "rethink" %}
+				<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/images/rethink-it.png" alt="rethink-branch-it">
+				{% else %}
+				<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/images/zero-it.png" alt="zero-branch-it">
+				{% endif %}
 			</div>
-			<p class="hero__subhead">
+			<p class="hero__subhead h1">
 				Riverbed offers a new and better approach to branch IT.
 			</p>
 			<div class="hero__features--wrapper">
