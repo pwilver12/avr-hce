@@ -4,9 +4,9 @@
 
 .flex
 	display: flex
-	+breakpoint($break-tablet)
-		display: block
+	flex-wrap: wrap
 	
+	// align-items
 	&.align-center
 		align-items: center
 
@@ -16,22 +16,16 @@
 	&.align-end
 		align-items: flex-end
 
+	// justify-content
+	&.justify-around
+		justify-content: space-around
+
+	&.justify-between
+		justify-content: space-between
+
+	// order
 	&.order-1
 		order: 1
+
 	&.order-2
 		order: 2
-
-.flex-wide
-	display: flex
-	justify-content: space-between
-	+breakpoint($break-tablet)
-		display: block
-
-	&.align-center
-		align-items: center
-
-	&.align-start
-		align-items: flex-start
-
-	&.align-end
-		align-items: flex-end
