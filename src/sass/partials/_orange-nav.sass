@@ -1,26 +1,61 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
 @import ./src/sass/partials/colors
+
+
+// Breakpoint variables
+$break-nav: 0 820px
 
 .fixed-nav--wrapper
 	overflow: hidden
 	background: $orange
 	width: 100%
 	padding: 30px 0
+	+breakpoint($break-tablet)
+		padding: 15px 0
 
 	&.fixed-top
 		position: fixed
 		top: 0
 		z-index: 9
+		
+		.fixed-nav__left
+			h3
+				max-width: 100%
 
 		.fixed-nav__logos
 			top: 0
 			opacity: 1
 
+.fixed-nav__inner
+	&.flex
+		+breakpoint($break-phone)
+			display: block
+
 .fixed-nav__left
 	position: relative
-	float: left
+	flex: 2
+	text-align: right
+	padding-right: 20px
+	+breakpoint($break-nav)
+		text-align: left
+	+breakpoint($break-phone)
+		text-align: center
+		padding: 0
 
 	h3
 		color: #fff
+		transition: max-width 0.8s ease
+		max-width: 225px
+		margin: 0
+		+breakpoint($break-phone)
+			max-width: 100%
+			margin-bottom: 10px
+
+.fixed-nav__right
+	+breakpoint($break-phone)
+		text-align: center
 
 .fixed-nav__logos
 	display: block
@@ -28,6 +63,8 @@
 	top: -85px
 	opacity: 0
 	transition: all 0.8s ease
+	+breakpoint($break-nav)
+		display: none
 
 	img
 		display: inline-block
@@ -37,11 +74,9 @@
 			top: 0
 			left: 0
 			border-right: 1px solid #fff
-			padding-right: 20px
+			max-width: 150px
+			padding-right: 15px
 
 		&.logo--avnet
-			top: 12px
-			left: 212px
-
-.fixed-nav__right
-	float: right
+			top: 4px
+			left: 165px
