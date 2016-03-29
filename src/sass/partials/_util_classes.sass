@@ -5,6 +5,10 @@
 @import util_classes/flexbox
 
 .mobile--show
-	display: none
+	display: none !important
 	+breakpoint($break-phone)
-		display: inherit
+		display: inherit !important
+
+.mobile--hide
+	+breakpoint($break-tablet)
+		display: none !important
