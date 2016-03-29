@@ -14,7 +14,15 @@
 	overflow: hidden
 	text-align: center
 
+	&.flex
+		+breakpoint($break-tablet)
+			display: block
+
 .hero__logo--wrapper
+	&.flex
+		+breakpoint($break-tablet)
+			display: block
+
 	img
 		+breakpoint($not-phone)
 			display: inline-block
@@ -35,6 +43,9 @@
 	padding-bottom: 15px
 	+breakpoint($all-desktop)
 		margin-left: 30px
+	&.flex
+		+breakpoint($break-tablet)
+			display: block
 
 	p
 		display: inline-block
@@ -52,14 +63,36 @@
 			display: block
 
 .hero__content--wrapper
-	position: relative
 	text-align: center
-	max-width: 650px
 	margin: 0 auto
 	padding-top: 80px
 	+breakpoint($break-tablet)
 		padding-top: 40px
 
-// .hero__subhead
-// 	font-size: 2.5em
-// 	font-weight: $light
+	.load-delay
+		top: 25px
+		opacity: 0
+
+.hero__headline
+	position: relative
+	top: 0
+	transition: top 2s ease, opacity 2s ease
+	max-width: 600px
+	margin-right: auto
+	margin-left: auto
+	opacity: 1
+
+.hero__features--wrapper
+	position: relative
+	top: 0
+	text-align: center
+	transition: top 2s ease, opacity 2s ease
+	opacity: 1
+
+.hero__features--item
+	flex: 1 0 25%
+	margin-bottom: 15px
+	+breakpoint($break-tablet)
+		flex: 1 0 50%
+	+breakpoint($break-phone)
+		flex: 1 0 100%
