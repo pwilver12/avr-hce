@@ -49,6 +49,7 @@ var app = {
 			e.preventDefault();
 
 			$('.form-modal__request-meeting').addClass('active');
+			$('body').css({ 'overflow': 'hidden' });
 		});
 
 		// On PDF download links click
@@ -63,6 +64,7 @@ var app = {
 		$('.form-modal--close').click(function(e) {
 			e.preventDefault();
 
+			$('body').removeAttr('style');
 			$(this).closest('.modal--wrapper').removeClass('active');
 		});
 	},
@@ -173,6 +175,7 @@ var app = {
 			.change();
 
 		$('.form-modal__pdf-download').addClass('active');
+		$('body').css({ 'overflow': 'hidden' });
 	}
 }
 
