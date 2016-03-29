@@ -1,2 +1,37 @@
+@import breakpoint
+
+@import ./src/sass/partials/breakpoints
+
 .flex
 	display: flex
+	+breakpoint($break-tablet)
+		display: block
+	
+	&.align-center
+		align-items: center
+
+	&.align-start
+		align-items: flex-start
+
+	&.align-end
+		align-items: flex-end
+
+	&.order-1
+		order: 1
+	&.order-2
+		order: 2
+
+.flex-wide
+	display: flex
+	justify-content: space-between
+	+breakpoint($break-tablet)
+		display: block
+
+	&.align-center
+		align-items: center
+
+	&.align-start
+		align-items: flex-start
+
+	&.align-end
+		align-items: flex-end
