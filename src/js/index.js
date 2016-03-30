@@ -27,29 +27,28 @@ var app = {
 			});
 		});
 
-		// Autoplay video on mouseover
-		$('.video__container').mouseover(function(e) {
-			$(this).find('video')[0].volume = 0;
-			$(this).find('video')[0].play();
-		}).mouseout(function(e) {
-			$(this).find('video')[0].pause();
-		});
-
-		// Show video modal on click
-		$('.video__container').click(function(e) {
-			e.preventDefault();
-
-			var src = $(this).find('source').attr('src');
-			app.buildVideoModal(src);
-			app.videoModal.show();
-		});
-
 		// On 'Request Meeting' click
 		$('.request-meeting').click(function(e) {
 			e.preventDefault();
 
-			$('.form-modal__request-meeting').addClass('active');
-			$('html, body').css({ 'overflow': 'hidden' });
+			app.showModal($('.form-modal__request-meeting'));
+		});
+
+		// Show video form and modal on click
+		$('.video__container').click(function(e) {
+			e.preventDefault();
+
+			if (!app.videoModal) {
+				var src = $(this).find('source').attr('src');
+				app.buildVideoModal(src);
+			}
+
+			if (!window.submittedVideoForm) {
+				app.showModal($('.form-modal__video'));
+			} else {
+				app.videoModal.show();
+				$('.video-modal').find('video')[0].play();
+			}
 		});
 
 		// On PDF download links click
@@ -64,15 +63,15 @@ var app = {
 		$('.form-modal--close').click(function(e) {
 			e.preventDefault();
 
-			$('html, body').css({ 'overflow': 'visible' });
-			$(this).closest('.modal--wrapper').removeClass('active');
+			app.hideModal($(this).closest('.modal--wrapper'));
 		});
 	},
 
 	modalEventBindings: function() {
 		$('.video-modal__close').click(function(e) {
 			e.preventDefault();
-			app.videoModal.destroy();
+			app.videoModal.hide();
+			$('.video-modal').find('video')[0].pause();
 		});
 	},
 
@@ -114,7 +113,6 @@ var app = {
 
 		$video.attr({
 			src: src,
-			autoplay: true,
 			controls: true
 		});
 
@@ -171,8 +169,17 @@ var app = {
 			.val(pdfTitle)
 			.change();
 
-		$('.form-modal__pdf-download').addClass('active');
-		$('html, body').css({ 'overflow': 'hidden' });
+		app.showModal($('.form-modal__pdf-download'));
+	},
+
+	showModal: function($modal) {
+		$modal.addClass('active');
+		$('body').css({ 'overflow': 'hidden' });
+	},
+
+	hideModal: function($modal) {
+		$modal.removeClass('active');
+		$('body').css({ 'overflow': 'visible' });
 	}
 }
 
