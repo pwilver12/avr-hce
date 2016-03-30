@@ -1,0 +1,34 @@
+<!-- Video Form Modal -->
+<div class="modal--wrapper form-modal__video">
+	<div class="form-modal--inner">
+		<div class="form-modal--close"></div>
+		<h2 class="form-modal__header">Watch the video</h2>
+		<div class="form-modal__form">
+			<!--[if lte IE 8]>
+			<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+			<![endif]-->
+			<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+			<!-- FORM EMBED CODE -->
+			<script>
+				hbspt.forms.create({ 
+					css: '',
+					submitButtonClass: 'cta cta--orange',
+					portalId: '2124715',
+					formId: 'b875d3dc-97cb-43cc-a150-1d8fa8be8c6b',
+					onFormSubmit: function($form) {
+						setTimeout(function() {
+							$('.form-modal__video').removeClass('active');
+							window.submittedVideoForm = true;
+
+							$('body').css({ 'overflow': 'hidden' });
+							$('.video-modal').addClass('active');
+							$('.video-modal').find('video').attr('autoplay', true);
+							$('.video-modal').find('video')[0].play();
+						}, 1500);
+					}
+			  });
+			</script>
+			<!-- END FORM EMBED CODE -->
+		</div>
+	</div>
+</div>
