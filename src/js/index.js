@@ -2,6 +2,7 @@ var modal = require('./js-modules/modal.js');
 
 var app = {
 	videoModal: null,
+	navOffset: null,
 
 	init: function() {
 		this.eventBindings();
@@ -11,20 +12,25 @@ var app = {
 	eventBindings: function() {
 		// On window load
 		$(window).load(function() {
-			var navOffset = $('.hero--wrapper').innerHeight();
+			app.navOffset = $('.hero--wrapper').innerHeight();
 
 			// Check on page load to reposition header items
-			app.parallaxEffectOnHeader(navOffset);
-			app.fixNavToTop(navOffset);
+			app.parallaxEffectOnHeader(app.navOffset);
+			app.fixNavToTop(app.navOffset);
 
 			// Show hero features section
 			$('*.load-delay').removeClass('load-delay');
 
 			// On window scroll
 			$(window).scroll(function() {
-				app.parallaxEffectOnHeader(navOffset);
-				app.fixNavToTop(navOffset);
+				app.parallaxEffectOnHeader(app.navOffset);
+				app.fixNavToTop(app.navOffset);
 			});
+		});
+
+		// On scroll button click
+		$('.hero__scroll-btn').click(function(e) {
+			app.scrollToPoint(app.navOffset);
 		});
 
 		// On 'Request Meeting' click
@@ -39,7 +45,7 @@ var app = {
 			e.preventDefault();
 
 			if (!app.videoModal) {
-				var src = $(this).find('source').attr('src');
+				var src = $(this).find('a').data('source');
 				app.buildVideoModal(src);
 			}
 
@@ -82,6 +88,12 @@ var app = {
 		if ($(window).scrollTop() < navTop && $(window).width() > 767) {
 			$('.hero__content--wrapper').css({ 'transform': 'translate3d(0, ' + offset + 'px, 0)' });
 		}
+	},
+
+	scrollToPoint: function(value) {
+		$('html, body').animate({
+			scrollTop: value
+		}, 'slow');
 	},
 
 	fixNavToTop: function(offset) {
