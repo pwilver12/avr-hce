@@ -36,19 +36,22 @@
 		max-width: 100%
 
 .video__container
+	cursor: pointer
 	position: relative
 	+breakpoint($break-tablet)
 		max-width: 450px
 		margin: 0 auto
 
 	&:hover
-		cursor: pointer
-
 		.video__play-btn
 			border-color: $orange
 
 			&:after
 				border-left-color: $orange
+
+	a
+		display: inline-block
+		max-width: 100%
 
 	.video__play-btn
 		display: inline-block
