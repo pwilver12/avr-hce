@@ -1,10 +1,8 @@
 {% choice 'page_type' label='Which landing page is this?', value='rethink', choices='[[\"rethink\", \"Rethink Branch IT\"], [\"zero\", \"Zero Branch IT\"]]', export_to_template_context=True %}
 
 {% if widget_data.page_type.value == 'rethink' %}
-{% set share_message = '' %}
 {% set share_url = 'http://www.avnetriverbed.com/rethinkbranchit' %}
 {% elif widget_data.page_type.value == 'zero' %}
-{% set share_message = '' %}
 {% set share_url = 'http://www.avnetriverbed.com/zerobranchit' %}
 {% endif %}
 
@@ -13,13 +11,13 @@
 		<header class="hero__header flex align-start justify-between">
 			<div class="hero__share--wrapper flex align-center order-2">
 				<p class="mobile--hide">Share:</p>
-				<a href="https://twitter.com/intent/tweet?text={{ share_message|urlencode }}&hashtags=ZeroBranchIT&url={{ share_url|urlencode }}" class="hero__share--item" target="_blank">
+				<a href="https://twitter.com/intent/tweet?url={{ share_url|urlencode }}" class="hero__share--item" target="_blank">
 					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_twitter.png" alt="twitter_share">
 				</a>
-				<a href="{{ share_url|urlencode }}" class="hero__share--item" target="_blank">
+				<a href="https://www.facebook.com/sharer/sharer.php?u={{ share_url|urlencode }}" class="hero__share--item" target="_blank">
 					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_facebook.png" alt="facebook_share">
 				</a>
-				<a href="{{ share_url|urlencode }}" class="hero__share--item" target="_blank">
+				<a href="https://www.linkedin.com/cws/share?url={{ share_url|urlencode }}" class="hero__share--item" target="_blank">
 					<img src="//cdn2.hubspot.net/hubfs/2124715/avr_campaign/assets/icons/share_linkedin.png" alt="linkedin_share">
 				</a>
 				<a href="https://plus.google.com/share?url={{ share_url|urlencode }}" class="hero__share--item" target="_blank">
