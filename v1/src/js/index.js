@@ -1,7 +1,4 @@
-var modal = require('./js-modules/modal.js');
-
 var app = {
-	videoModal: null,
 	navOffset: null,
 
 	init: function() {
@@ -44,17 +41,7 @@ var app = {
 		$('.video__container').click(function(e) {
 			e.preventDefault();
 
-			if (!app.videoModal) {
-				var src = $(this).find('a').data('source');
-				app.buildVideoModal(src);
-			}
-
-			if (!window.submittedVideoForm) {
-				app.showModal($('.form-modal__video'));
-			} else {
-				app.videoModal.show();
-				$('.video-modal').find('video')[0].play();
-			}
+			app.showModal($('.form-modal__video'));
 		});
 
 		// On PDF download links click
@@ -69,15 +56,9 @@ var app = {
 		$('.form-modal--close').click(function(e) {
 			e.preventDefault();
 
-			app.hideModal($(this).closest('.modal--wrapper'));
-		});
-	},
+			$('.pdf-form').hide();
 
-	modalEventBindings: function() {
-		$('.video-modal__close').click(function(e) {
-			e.preventDefault();
-			app.videoModal.hide();
-			$('.video-modal').find('video')[0].pause();
+			app.hideModal($(this).closest('.modal--wrapper'));
 		});
 	},
 
@@ -111,31 +92,6 @@ var app = {
 				$('.partner--wrapper').removeAttr('style');
 			}
 		}
-	},
-
-	buildVideoModal: function(src) {
-		// Build video contents
-		var $videoWrapper = $('<div>'),
-			$video = $('<video>'),
-			$videoClose = $('<div>');
-
-		$videoWrapper.addClass('video-modal--inner');
-		$video.addClass('video-modal__video');
-		$videoClose.addClass('video-modal__close');
-
-		$video.attr({
-			src: src,
-			controls: true
-		});
-
-		$videoWrapper.append($video).append($videoClose);
-
-		app.videoModal = new modal('video-modal');
-		app.videoModal.init(app.modalEventBindings, app);
-
-		$('.modal-inner').append($videoWrapper);
-
-		app.modalEventBindings();
 	},
 
 	initSliders: function() {
@@ -176,10 +132,8 @@ var app = {
 			.attr('alt', imageAlt)
 			.data('source', source);
 
-		// Update 'Downloaded PDF' hidden field
-		$('.form-modal__pdf-download').find('input[name="downloaded_pdf"]')
-			.val(pdfTitle)
-			.change();
+		// Show proper download form
+		$('.form-modal__form').find('[data-source*="' + source + '"]').find('.pdf-form').show();
 
 		app.showModal($('.form-modal__pdf-download'));
 	},
