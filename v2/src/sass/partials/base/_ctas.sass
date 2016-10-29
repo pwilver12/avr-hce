@@ -1,0 +1,25 @@
+// @import ../variables
+
+
+.cta
+	display: inline-block
+	color: $fontColorDark
+	font-family: $fontFamilySourceSans
+	font-size: 1em
+	font-weight: $fontWeightSemibold
+	text-transform: uppercase
+	letter-spacing: 1px
+	text-align: center
+	border: 2px solid $borderOrange
+	transition: all 0.3s
+	padding: 15px 40px
+
+	&:hover
+		background-color: $backgroundOrange
+		color: $colorWhite
+		text-decoration: none
+
+	&:active
+		background-color: darken($backgroundOrange, 10%)
+		border-color: darken($borderOrange, 10%)
+		transition: none
