@@ -3,7 +3,7 @@
 
 html, body
 	color: $fontColorDark
-	font-family: $sourceSans
+	font-family: $fontFamilySourceSans
 	font-size: 1em
 	margin: 0
 	padding: 0
@@ -23,8 +23,10 @@ section
 		padding-bottom: 100px
 
 p
-	margin-top: 13px
-	margin-bottom: 13px
+	font-size: 1em
+	line-height: 1.5em
+	margin-top: 1em
+	margin-bottom: 1.5em
 
 a
 	outline: none
@@ -36,9 +38,18 @@ a
 
 	&:hover
 		color: $linkColorHover
+		text-decoration: underline
 
 button
 	outline: none
+
+ul, ol
+	margin: 0 0 0 3em
+	padding: 0
+
+li
+	font-size: 1em
+	line-height: 1.6em
 
 img
 	max-width: 100%
@@ -46,3 +57,38 @@ img
 video
 	height: auto
 	max-width: 100%
+
+
+//////////////////
+// H E A D E R S
+//////////////////
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+	font-family: $fontFamilySourceSans
+	line-height: 1.25em
+	margin: 0.8em 0
+
+h1, .h1
+	font-size: 42px
+	font-weight: $fontWeightSemibold
+	text-transform: uppercase
+	margin-top: 18px
+	margin-bottom: 18px
+	+breakpoint($breakpoint-lte-phone)
+		font-size: 36px
+
+h2, .h2
+	font-size: 30px
+	font-weight: $fontWeightNormal
+	margin-top: 13px
+	margin-bottom: 13px
+	+breakpoint($breakpoint-lte-phone)
+		font-size: 26px
+
+h3, .h3
+	font-size: 26px
+	font-weight: $fontWeightLight
+	line-height: 1.4em
+	margin-top: 13px
+	margin-bottom: 13px
+	+breakpoint($breakpoint-lte-phone)
+		font-size: 22px
