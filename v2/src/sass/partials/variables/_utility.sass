@@ -1,4 +1,5 @@
 @import colors
+@import mixins
 
 
 .page-width-normal
@@ -15,7 +16,8 @@
 	background-color: $backgroundOrange
 
 .module-bg--textured
-	background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/background-wave.png')
-	background-position: right
-	background-repeat: no-repeat
-	background-size: 35%
+	+breakpoint-min($breakpoint-gt-phone)
+		background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/background-wave.png')
+		background-position: right
+		background-repeat: no-repeat
+		background-size: contain
