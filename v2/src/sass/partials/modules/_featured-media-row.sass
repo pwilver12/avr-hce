@@ -1,0 +1,72 @@
+// @import ../variables
+
+
+.media-row
+
+.media-row__content
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		align-items: center
+
+.media-row__text-wrapper
+	text-align: center
+	+breakpoint-min($breakpoint-gt-phone)
+		text-align: left
+
+	*
+		color: $colorWhite
+
+.media-row__header
+	margin: 0
+
+.media-row__description
+	font-size: 1.3em
+	font-weight: $fontWeightLight
+	margin: 0
+
+.media-row__cta-wrapper
+	margin: 30px 0
+
+.media-row__poster-wrapper
+	cursor: pointer
+	position: relative
+	max-width: 500px
+	margin: 0 auto
+	+breakpoint-min($breakpoint-gt-phone)
+		max-width: 50%
+		margin-left: 30px
+
+.media-row__play-btn
+	+play-btn($colorWhite, $colorWhite, $colorBlackOpac1)
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+
+	.media-row__poster-wrapper:hover &
+		background-color: $colorBlack
+
+
+////////////////
+// VIDEO POPUP
+////////////////
+.media-row__video-wrapper
+	display: inline-block
+	position: relative
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	max-width: 650px
+	width: 100%
+
+	&:after
+		content: ''
+		display: block
+		padding-bottom: 56.25%
+
+.media-row__video
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
