@@ -1,5 +1,8 @@
 // @import ../variables
 
+body
+	background: url('http://cdn.wallpapersafari.com/28/9/8iQsvx.jpg')
+	text-align: center
 
 .cta
 	display: inline-block
@@ -21,5 +24,31 @@
 
 	&:active
 		background-color: darken($backgroundOrange, 10%)
+		color: $colorWhite
 		border-color: darken($borderOrange, 10%)
 		transition: none
+
+	&--white
+		color: $colorWhite
+		border-color: $colorWhite
+
+		&:hover
+			background-color: $colorWhite
+			color: $colorOrange1
+
+		&:active
+			background-color: darken($colorWhite, 10%)
+			color: $colorOrange1
+			border-color: darken($colorWhite, 10%)
+
+	&--dark
+		background-color: $colorBlackOpac1
+		color: $colorWhite
+		border-color: $colorWhite
+
+		&:hover
+			background-color: $backgroundOrangeOpac
+
+		&:active
+			background-color: $backgroundOrange
+			border-color: $colorWhite
