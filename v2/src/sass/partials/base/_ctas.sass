@@ -12,7 +12,7 @@
 	text-align: center
 	border: 2px solid $borderOrange
 	transition: all 0.3s
-	padding: 15px 40px
+	padding: 20px 40px
 
 	&:hover
 		background-color: $backgroundOrange
@@ -49,3 +49,35 @@
 		&:active
 			background-color: $backgroundOrange
 			border-color: $colorWhite
+
+	&--arrow
+		line-height: 1.5em
+		transition: none
+
+		&:after
+			content: ''
+			display: inline-block
+			position: relative
+			background-image: url('http://cdn2.hubspot.net/hubfs/2124715/assets/icons/arrow-grey.png')
+			background-repeat: no-repeat
+			background-size: 32px
+			vertical-align: middle
+			width: 32px
+			height: 32px
+			margin-left: 10px
+
+		&:hover, &:active
+			&:after
+				background-image: url('http://cdn2.hubspot.net/hubfs/2124715/assets/icons/arrow-white.png')
+
+		&.cta--white
+			&:after
+				background-image: url('http://cdn2.hubspot.net/hubfs/2124715/assets/icons/arrow-white.png')
+
+			&:hover, &:active
+				&:after
+					background-image: url('http://cdn2.hubspot.net/hubfs/2124715/assets/icons/arrow-orange.png')
+
+		&.cta--dark
+			&:after
+				background-image: url('http://cdn2.hubspot.net/hubfs/2124715/assets/icons/arrow-white.png')
