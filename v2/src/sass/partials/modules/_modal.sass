@@ -1,0 +1,27 @@
+// @import ../variables
+
+
+.popup-modal
+	overflow-x: hidden
+	overflow-y: auto
+	display: none
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	background: $colorBlackOpac1
+	width: 100%
+	height: 100%
+	z-index: 99
+
+	&.active
+		display: block
+
+	.popup-modal__inner
+		// visibility: visible
+		position: relative
+		// top: 50%
+		// left: 50%
+		// transform: translate(-50%, -50%)
+		max-width: 900px
