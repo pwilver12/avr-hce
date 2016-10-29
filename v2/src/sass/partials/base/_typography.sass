@@ -1,0 +1,48 @@
+// @import ../variables
+
+
+html, body
+	// color: $baseFontColor
+	font-family: $sourceSans
+	font-size: 1em
+	margin: 0
+	padding: 0
+
+	*
+		box-sizing: border-box
+
+// HTML5 elements (for support on older browsers)
+header, section, footer, aside, nav, main, article, figure
+	display: block
+
+section
+	padding-top: 50px
+	padding-bottom: 50px
+	+breakpoint($breakpoint-gt-phone)
+		padding-top: 100px
+		padding-bottom: 100px
+
+p
+	margin-top: 13px
+	margin-bottom: 13px
+
+a
+	outline: none
+	// color: $blue
+	text-decoration: none
+
+	img
+		border: 0
+
+	&:hover
+		// color: $blueHover
+
+button
+	outline: none
+
+img
+	max-width: 100%
+
+video
+	height: auto
+	max-width: 100%
