@@ -1,0 +1,34 @@
+// @import ../variables
+
+
+.testimonial
+
+.testimonial__text-wrapper
+	text-align: center
+	// max-width: 850px
+	// margin: 0 auto
+
+.testimonial__quote
+	font-size: 1.5em
+	font-weight: $fontWeightLight
+	margin-top: 0
+	margin-bottom: 15px
+
+	&:before, &:after
+		display: inline-block
+		position: relative
+		color: $fontColorBlue
+		font-weight: $fontWeightNormal
+
+	&:before
+		content: '\201C'
+		margin-right: 3px
+
+	&:after
+		content: '\201D'
+		margin-left: 3px
+
+.testimonial__author
+	color: $fontColorBlue
+	font-size: 1.4em
+	margin: 0
