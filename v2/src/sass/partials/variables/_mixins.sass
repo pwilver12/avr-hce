@@ -8,3 +8,27 @@
 =breakpoint-min($breakpoint)
 	@media (min-width: $breakpoint)
 		@content
+
+
+// Play buttons
+=play-btn($borderColor: $colorWhite, $arrowColor: $colorWhite, $backgroundColor: transparent, $circleDiameter: 40px, $arrowHeight: 15px)
+	cursor: pointer
+	position: relative
+	background-color: $backgroundColor
+	border: 2px solid $borderColor
+	border-radius: 50%
+	width: $circleDiameter
+	height: $circleDiameter
+	z-index: 1
+
+	&:after
+		content: ''
+		display: inline-block
+		position: absolute
+		top: 50%
+		left: 50%
+		border-top: #{$arrowHeight/2} solid transparent
+		border-bottom: #{$arrowHeight/2} solid transparent
+		border-left: #{$arrowHeight*0.75} solid $arrowColor
+		margin-top: -#{$arrowHeight/2}
+		margin-left: -#{$arrowHeight/4}
