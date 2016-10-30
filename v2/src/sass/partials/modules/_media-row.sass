@@ -27,14 +27,32 @@
 .media-row__cta-wrapper
 	margin: 30px 0
 
-.media-row__poster-wrapper
-	cursor: pointer
+.media-row__media-wrapper
 	position: relative
 	max-width: 500px
+	width: 100%
 	margin: 0 auto
 	+breakpoint-min($breakpoint-gt-phone)
 		max-width: 50%
 		margin-left: 30px
+
+	&:after
+		content: ''
+		display: block
+		padding-bottom: 56.25%
+
+	&--video
+		cursor: pointer
+
+.media-row__media
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	max-width: 100%
+	max-height: 100%
+	margin: auto
 
 .media-row__play-btn
 	+play-btn($colorWhite, $colorWhite, $colorBlackOpac1)
@@ -43,7 +61,7 @@
 	left: 50%
 	transform: translate(-50%, -50%)
 
-	.media-row__poster-wrapper:hover &
+	.media-row__image-wrapper:hover &
 		background-color: $colorBlack
 
 
