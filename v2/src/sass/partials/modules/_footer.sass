@@ -70,39 +70,15 @@
 
 .avr-footer__social-item
 	display: inline-block
-	vertical-align: middle
-	margin: 0 5px
+	margin: 0 8px
 
 	a
-		display: block
-		background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/social-sprite-grey2.png')
-		background-repeat: no-repeat
-		background-size: cover
-		width: 32px
-		height: 32px
-		+breakpoint-min($breakpoint-gt-tablet)
-			width: 24px
-			height: 24px
+		color: $fontColorLight
+		font-size: 2em
+		line-height: 1em
+		vertical-align: top
+		+breakpoint-min($breakpoint-gt-phone)
+			font-size: 1.5em
 
-		&.share-facebook
-			background-position: 0
-
-		&.share-twitter
-			background-position: -40px
-			+breakpoint-min($breakpoint-gt-tablet)
-				background-position: -31px
-
-		&.share-gplus
-			background-position: -79px
-			+breakpoint-min($breakpoint-gt-tablet)
-				background-position: -59px
-
-		&.share-yt
-			background-position: -118px
-			+breakpoint-min($breakpoint-gt-tablet)
-				background-position: -89px
-
-		&.share-li
-			background-position: -158px
-			+breakpoint-min($breakpoint-gt-tablet)
-				background-position: -118px
+		&:hover
+			text-decoration: none
