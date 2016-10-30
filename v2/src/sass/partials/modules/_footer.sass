@@ -4,11 +4,14 @@
 .avr-footer
 	background-color: $backgroundBlue
 	padding: 40px 0
+	+breakpoint($breakpoint-lte-phone)
+		text-align: center
 
 .avr-footer__content
-	display: flex
-	align-items: center
-	justify-content: space-between
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		align-items: center
+		justify-content: space-between
 
 .avr-footer__logo-wrapper
 	display: inline-block
@@ -19,27 +22,38 @@
 	max-height: 35px
 
 .avr-footer__links-wrapper
-	display: flex
-	align-items: center
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		align-items: center
+	+breakpoint-between($breakpoint-gt-phone, $breakpoint-lte-tablet)
+		flex-flow: column wrap
+		align-items: flex-end
+		justify-content: center
 
 .avr-footer__links-list,
 .avr-footer__social-list
-	display: inline-block
 	list-style: none
-	margin-left: 0
+	margin: 15px 0
+	+breakpoint-min($breakpoint-gt-phone)
+		display: inline-block
+		margin: 0
+
+	&:nth-last-child(1)
+		margin-bottom: 0
 
 .avr-footer__links-list
 	color: $colorGrey2
 	font-weight: $fontWeightSemibold
 
 .avr-footer__link
-	display: inline-block
-	vertical-align: middle
-	border-right: 2px solid $borderGreyLight
-	padding: 0 10px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: inline-block
+		vertical-align: middle
+		border-right: 2px solid $borderGreyLight
+		padding: 0 10px
 
-	&:nth-last-child(1)
-		border-right: 0
+		&:nth-last-child(1)
+			border-right: 0
 
 	a
 		color: $fontColorLight
@@ -49,8 +63,10 @@
 			color: $fontColorLight
 
 .avr-footer__social-list
-	display: inline-block
-	margin-left: 20px
+	+breakpoint-min($breakpoint-gt-phone)
+		margin-left: 15px
+	+breakpoint-between($breakpoint-gt-phone, $breakpoint-lte-tablet)
+		margin-top: 15px
 
 .avr-footer__social-item
 	display: inline-block
@@ -62,20 +78,31 @@
 		background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/social-sprite-grey2.png')
 		background-repeat: no-repeat
 		background-size: cover
-		width: 24px
-		height: 24px
+		width: 32px
+		height: 32px
+		+breakpoint-min($breakpoint-gt-tablet)
+			width: 24px
+			height: 24px
 
 		&.share-facebook
 			background-position: 0
 
 		&.share-twitter
-			background-position: -31px
+			background-position: -40px
+			+breakpoint-min($breakpoint-gt-tablet)
+				background-position: -31px
 
 		&.share-gplus
-			background-position: -59px
+			background-position: -79px
+			+breakpoint-min($breakpoint-gt-tablet)
+				background-position: -59px
 
 		&.share-yt
-			background-position: -89px
+			background-position: -118px
+			+breakpoint-min($breakpoint-gt-tablet)
+				background-position: -89px
 
 		&.share-li
-			background-position: -118px
+			background-position: -158px
+			+breakpoint-min($breakpoint-gt-tablet)
+				background-position: -118px
