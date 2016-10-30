@@ -7,8 +7,9 @@ const videoModal = {
 		const app = this;
 
 		// On video cta click or poster image click
-		$('.media-row__cta, .media-row__poster-wrapper').click((e) => {
+		$('.media-row [data-video=true]').click((e) => {
 			e.preventDefault();
+
 			const $target = $(e.currentTarget);
 			const $modalTarget = $target.closest('.media-row').find('.media-row__video-modal');
 			const modalVideo = $modalTarget.find('video')[0];
