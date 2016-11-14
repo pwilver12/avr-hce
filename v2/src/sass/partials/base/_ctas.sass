@@ -1,32 +1,40 @@
 // @import ../variables
 
 
-.cta
+%cta-styles
 	cursor: pointer
 	display: inline-block
-	color: $fontColorDark
 	font-family: $fontFamilySourceSans
 	font-size: 1em
 	font-weight: $fontWeightBold
 	text-transform: uppercase
 	letter-spacing: 1px
 	text-align: center
-	border: 2px solid $borderOrange
 	transition: all 0.3s
+
+	&:hover
+		text-decoration: none
+
+	&:active
+		transition: none
+
+.cta
+	@extend %cta-styles
+	color: $fontColorDark
+	border: 2px solid $borderOrange
 	padding: 20px 40px
 
 	&:hover
 		background-color: $backgroundOrange
 		color: $colorWhite
-		text-decoration: none
 
 	&:active
 		background-color: darken($backgroundOrange, 10%)
 		color: $colorWhite
 		border-color: darken($borderOrange, 10%)
-		transition: none
 
 	&--white
+		@extend %cta-styles
 		color: $colorWhite
 		border-color: $colorWhite
 
@@ -40,6 +48,7 @@
 			border-color: darken($colorWhite, 10%)
 
 	&--dark
+		@extend %cta-styles
 		background-color: $colorBlackOpac1
 		color: $colorWhite
 		border-color: $colorWhite
