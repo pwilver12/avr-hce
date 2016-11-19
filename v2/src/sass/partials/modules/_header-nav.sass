@@ -1,0 +1,30 @@
+// @import ../variables
+
+
+.header-nav
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding-bottom: 30px
+
+.header-nav__logo
+	display: inline-block
+	max-width: 100%
+	max-height: 28px
+	+breakpoint-min($breakpoint-gt-phone)
+		max-height: 35px
+
+.header-nav__list
+	@extend %unstyled-list
+	text-align: right
+
+	li
+		display: inline-block
+		margin: 0 5px
+
+		a
+			@extend %cta-text-link
+			display: block
+			color: $colorWhite
+			padding: 5px
