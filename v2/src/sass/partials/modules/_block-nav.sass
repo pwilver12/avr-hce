@@ -1,0 +1,28 @@
+// @import ../variables
+
+
+.block-nav
+	position: relative
+	display: flex
+	flex-flow: row wrap
+	justify-content: center
+	padding: 30px 0
+
+.block-nav__item-wrapper
+	display: flex
+	padding: 0 20px
+
+.block-nav__item
+	@extend %cta-styles
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: $colorBlackOpac1
+	color: $colorWhite
+	border-color: $colorWhite
+	width: 250px
+	margin-bottom: 20px
+
+	&:hover
+		color: $colorWhite
+		background-color: $colorOrangeOpac1
