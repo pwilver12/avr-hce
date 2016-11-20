@@ -12,17 +12,6 @@ html, body
 		-webkit-font-smoothing: antialiased
 		box-sizing: border-box
 
-// HTML5 elements (for support on older browsers)
-header, section, footer, aside, nav, main, article, figure
-	display: block
-
-section
-	padding-top: 40px
-	padding-bottom: 40px
-	+breakpoint-min($breakpoint-gt-phone)
-		padding-top: 60px
-		padding-bottom: 60px
-
 p
 	font-size: 1em
 	line-height: 1.5em
@@ -40,24 +29,6 @@ a
 	&:hover
 		color: $linkColorHover
 		text-decoration: underline
-
-button
-	outline: none
-
-ul, ol
-	margin: 0 0 0 3em
-	padding: 0
-
-li
-	font-size: 1em
-	line-height: 1.6em
-
-img
-	max-width: 100%
-
-video
-	height: auto
-	max-width: 100%
 
 
 //////////////////
