@@ -1,6 +1,14 @@
 // @import ../variables
 
 
+.cf
+	&:before, &:after
+		content: ''
+		display: table
+
+	&:after
+		clear: both
+
 .page-width-normal
 	box-sizing: content-box
 	max-width: 900px
