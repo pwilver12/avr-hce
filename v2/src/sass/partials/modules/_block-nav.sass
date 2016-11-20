@@ -8,11 +8,11 @@
 	justify-content: center
 	margin-top: 40px
 
-.block-nav__item-wrapper
+.block-nav__link-wrapper
 	display: flex
 	padding: 0 20px
 
-.block-nav__item
+.block-nav__link
 	@extend %cta-styles
 	display: flex
 	align-items: center
@@ -23,6 +23,6 @@
 	width: 250px
 	margin-bottom: 20px
 
-	&:hover
+	&:hover, &.active
 		color: $colorWhite
 		background-color: $colorOrangeOpac1
