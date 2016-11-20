@@ -30,3 +30,29 @@
 	font-size: 1.2em
 	+breakpoint-min($breakpoint-gt-phone)
 		margin-top: 0
+
+// Features
+.content-section__features-wrapper
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		justify-content: space-between
+
+.content-section__feature
+	position: relative
+	margin: 0 5px
+	padding: 5px 20px
+	+breakpoint-min($breakpoint-gt-phone)
+		flex: 1
+
+	&:before
+		content: ''
+		display: inline-block
+		position: absolute
+		top: 0
+		left: 0
+		background-color: $borderBlue
+		min-width: 50px
+		width: 20%
+		height: 5px
+		+breakpoint-min($breakpoint-gt-phone)
+			width: 100%
