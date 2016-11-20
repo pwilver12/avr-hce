@@ -14,11 +14,12 @@
 .module-bg--orange
 	background-color: $backgroundOrange
 
-.module-bg--textured
+.module-bg--orange-textured
+	@extend .module-bg--orange
+	background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/background-wave.png')
+	background-position: right bottom
+	background-repeat: no-repeat
 	+breakpoint-min($breakpoint-gt-phone)
-		background-image: url('//cdn2.hubspot.net/hubfs/2124715/assets/icons/background-wave.png')
-		background-position: right
-		background-repeat: no-repeat
 		background-size: contain
 
 // Social icon utility classes
