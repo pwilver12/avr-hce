@@ -1,0 +1,64 @@
+// @import ../variables
+
+
+$formWidth: 375px
+$contentWidth: calc(100% - #{$formWidth + 30px})
+$containerPadding: 30px
+$assetBarHeight: 125px
+
+// A S S E T  B A R
+/////////////////////
+.asset-bar
+	overflow: hidden
+	padding: $containerPadding 0
+
+.asset-bar__content,
+.asset-bar__image-wrapper
+	+breakpoint-min($breakpoint-gt-phone)
+		height: $assetBarHeight
+
+.asset-bar__content
+	position: relative
+	text-align: center
+	+breakpoint-min($breakpoint-gt-phone)
+		text-align: left
+		max-width: $contentWidth
+
+.asset-bar__image
+	box-shadow: 0 0 30px 0 $colorBlackOpac2
+	+breakpoint-min($breakpoint-gt-phone)
+		max-width: 45%
+
+.asset-bar__description
+	color: $colorWhite
+	font-size: 1.2em
+	font-weight: $fontWeightSemibold
+	margin-bottom: 0
+	+breakpoint-min($breakpoint-gt-phone)
+		position: absolute
+		bottom: 0
+		left: calc(45% + 20px)
+		max-width: 45%
+		margin: 0
+
+
+// F O R M
+////////////
+.form-content
+	padding: $containerPadding 0
+
+.form-content__description
+	+breakpoint-min($breakpoint-gt-phone)
+		float: left
+		max-width: $contentWidth
+
+.form-content__form-wrapper
+	position: relative
+	background-color: $colorWhite
+	border: 1px solid $borderGreyLight
+	padding: 30px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: inline-block
+		float: right
+		width: $formWidth
+		margin-top: calc(-#{$assetBarHeight} - #{$containerPadding*2})
