@@ -2,6 +2,7 @@
 
 
 .content-section
+	overflow: hidden
 	padding-top: 0
 
 .content-section__image-wrapper
@@ -9,9 +10,17 @@
 	max-width: 400px
 	margin: 0 auto
 	+breakpoint-min($breakpoint-gt-phone)
-		float: right
 		max-width: 300px
-		margin: 0 0 30px 30px
+
+	&.image--right
+		+breakpoint-min($breakpoint-gt-phone)
+			float: right
+			margin: 0 0 30px 30px
+
+	&.image--left
+		+breakpoint-min($breakpoint-gt-phone)
+			float: left
+			margin: 0 30px 30px 0
 
 .content-section__image
 	display: inline-block
