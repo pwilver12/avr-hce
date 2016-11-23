@@ -11,10 +11,23 @@ $mobileNavOffset: 10px
 	width: $burgerLineWidth
 	height: 4px
 
+.topic-select-bar
+	position: relative
+	@extend %cta-text-link
+	background-color: $backgroundBlueOpac
+	color: $colorWhite
+	text-align: center
+	margin: 40px 20px 20px
+	padding: 15px 30px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: inherit
+
 .block-nav
 	position: relative
 	text-align: center
-	margin-top: 40px
+	margin-top: 20px
+	+breakpoint-min($breakpoint-gt-phone)
+		margin-top: 40px
 
 .block-nav__burger-wrapper
 	cursor: pointer
@@ -41,16 +54,6 @@ $mobileNavOffset: 10px
 
 	&:after
 		bottom: -8px
-
-.block-nav__topic-select
-	display: none
-	@extend %cta-text-link
-	background-color: $backgroundBlueOpac
-	color: $colorWhite
-	margin: 0 20px 30px
-	padding: 15px 30px
-	+breakpoint-min($breakpoint-gt-phone)
-		display: inherit
 
 .block-nav__links-list
 	@extend %unstyled-list
