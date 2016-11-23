@@ -54,21 +54,22 @@ $mobileNavOffset: 10px
 
 .block-nav__links-list
 	@extend %unstyled-list
-	// display: none
+	display: none
 	+breakpoint-min($breakpoint-gt-phone)
 		display: flex
 		flex-flow: row wrap
 		justify-content: center
-
-	&.open
-		display: block
+	+breakpoint($breakpoint-lte-phone)
 		position: absolute
 		top: calc(100% + #{$mobileNavOffset})
 		left: 50%
 		transform: translateX(-50%)
 		background-color: $colorBlackOpac1
 		min-width: 250px
-		padding: 20px 0
+		padding: 10px 0
+
+	&.open
+		display: block
 
 		&:before
 			content: ''
@@ -88,9 +89,6 @@ $mobileNavOffset: 10px
 		flex: 0 1 33%
 		padding: 0 20px
 
-	.block-nav__links-list.open &
-		//
-
 .block-nav__link
 	@extend %cta-styles
 	display: block
@@ -103,16 +101,12 @@ $mobileNavOffset: 10px
 		align-items: center
 		justify-content: center
 		margin-bottom: 20px
+	+breakpoint($breakpoint-lte-phone)
+		background-color: transparent
+		font-size: 0.9em
+		border: 0
+		padding: 10px 20px
 
 	&:hover, &.active
 		color: $colorWhite
 		background-color: $colorOrangeOpac1
-
-	.block-nav__links-list.open &
-		background-color: transparent
-		border: 0
-		padding: 15px 20px
-
-		&:hover, &.active
-			color: $colorWhite
-			background-color: $colorOrange1
