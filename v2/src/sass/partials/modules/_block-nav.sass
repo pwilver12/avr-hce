@@ -3,10 +3,20 @@
 
 .block-nav
 	position: relative
+	margin-top: 40px
+
+.block-nav__topic-select
+	@extend %cta-text-link
+	background-color: $backgroundBlueOpac
+	color: $colorWhite
+	text-align: center
+	padding: 10px 20px
+
+.block-nav__links-list
+	@extend %unstyled-list
 	display: flex
 	flex-flow: row wrap
 	justify-content: center
-	margin-top: 40px
 
 .block-nav__link-wrapper
 	display: flex
