@@ -1,6 +1,9 @@
 const videoModal = {
 	init() {
-		videoModal.eventBindings();
+		// If video media row is on page
+		if ($('.media-row--video').length > 0) {
+			videoModal.eventBindings();
+		}
 	},
 
 	eventBindings() {
