@@ -44,7 +44,27 @@
 	list-style: none
 	margin-left: 0
 
+%cta-styles
+	cursor: pointer
+	display: inline-block
+	font-family: $fontFamilySourceSans
+	font-size: 1em
+	font-weight: $fontWeightBold
+	text-transform: uppercase
+	letter-spacing: 0.06em
+	text-align: center
+	border: 1px solid
+	transition: all 0.3s
+	padding: 20px 40px
+
+	&:hover
+		text-decoration: none
+
+	&:active
+		transition: none
+
 %cta-text-link
 	font-size: 0.9em
 	font-weight: $fontWeightSemibold
 	text-transform: uppercase
+	letter-spacing: 0.06em
