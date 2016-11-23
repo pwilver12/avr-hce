@@ -1,38 +1,118 @@
 // @import ../variables
 
 
+$burgerPaddingSides: 10px
+$burgerLineWidth: 30px
+$mobileNavOffset: 10px
+
+%burger-nav-lines
+	background-color: $colorWhite
+	border-radius: 2px
+	width: $burgerLineWidth
+	height: 4px
+
 .block-nav
 	position: relative
+	text-align: center
 	margin-top: 40px
 
+.block-nav__burger-wrapper
+	cursor: pointer
+	background-color: $colorBlackOpac1
+	width: #{$burgerLineWidth + $burgerPaddingSides*2}
+	margin: 0 auto
+	padding: #{$burgerPaddingSides*2} $burgerPaddingSides
+	+breakpoint-min($breakpoint-gt-phone)
+		display: none
+
+.block-nav__burger
+	position: relative
+	@extend %burger-nav-lines
+	transition: all .3s
+
+	&:before, &:after
+		content: ''
+		display: block
+		position: absolute
+		@extend %burger-nav-lines
+
+	&:before
+		top: -8px
+
+	&:after
+		bottom: -8px
+
 .block-nav__topic-select
+	display: none
 	@extend %cta-text-link
 	background-color: $backgroundBlueOpac
 	color: $colorWhite
-	text-align: center
-	padding: 10px 20px
+	margin: 0 20px 30px
+	padding: 15px 30px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: inherit
 
 .block-nav__links-list
 	@extend %unstyled-list
-	display: flex
-	flex-flow: row wrap
-	justify-content: center
+	// display: none
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		flex-flow: row wrap
+		justify-content: center
+
+	&.open
+		display: block
+		position: absolute
+		top: calc(100% + #{$mobileNavOffset})
+		left: 50%
+		transform: translateX(-50%)
+		background-color: $colorBlackOpac1
+		min-width: 250px
+		padding: 20px 0
+
+		&:before
+			content: ''
+			display: inline-block
+			position: absolute
+			bottom: 100%
+			left: 50%
+			transform: translateX(-50%)
+			border-left: #{$mobileNavOffset} solid transparent
+			border-right: #{$mobileNavOffset} solid transparent
+			border-bottom: #{$mobileNavOffset} solid $colorBlackOpac1
 
 .block-nav__link-wrapper
-	display: flex
-	padding: 0 20px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		justify-content: center
+		flex: 0 1 33%
+		padding: 0 20px
+
+	.block-nav__links-list.open &
+		//
 
 .block-nav__link
 	@extend %cta-styles
-	display: flex
-	align-items: center
-	justify-content: center
+	display: block
 	background-color: $colorBlackOpac1
 	color: $colorWhite
 	border-color: $colorWhite
-	width: 250px
-	margin-bottom: 20px
+	+breakpoint-min($breakpoint-gt-phone)
+		display: flex
+		flex: 1
+		align-items: center
+		justify-content: center
+		margin-bottom: 20px
 
 	&:hover, &.active
 		color: $colorWhite
 		background-color: $colorOrangeOpac1
+
+	.block-nav__links-list.open &
+		background-color: transparent
+		border: 0
+		padding: 15px 20px
+
+		&:hover, &.active
+			color: $colorWhite
+			background-color: $colorOrange1
