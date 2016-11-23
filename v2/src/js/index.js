@@ -3,5 +3,5 @@ import blockNav from './modules/_blockNav';
 
 $(() => {
 	videoModal.init();
-	blockNav();
+	blockNav.init();
 });
