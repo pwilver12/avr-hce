@@ -1,13 +1,16 @@
 export default () => {
-	const $blockNavLinks = $('.block-nav__link');
+	const blockNavLinks = document.getElementsByClassName('block-nav__link');
 
-	if ($blockNavLinks.length) {
+	if (blockNavLinks.length) {
 		const pageLocation = document.location.pathname;
-		$blockNavLinks.map((i, el) => {
-			const elAttrHref = el.getAttribute('href');
-			if (elAttrHref.indexOf(pageLocation) > -1) {
-				$(el).addClass('active');
+		for (let i = 0; i < blockNavLinks.length; i++) {
+			const el = blockNavLinks[i],
+				elClasses = el.className,
+				elHref = el.getAttribute('href') || 'false';
+			if (pageLocation.indexOf(elHref) > -1) {
+				el.className = elClasses ? `${elClasses} active` : 'active';
+				break;
 			}
-		});
+		}
 	}
 }
