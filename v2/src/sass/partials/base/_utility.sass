@@ -9,6 +9,7 @@
 	&:after
 		clear: both
 
+// Page gutter class
 .page-width-normal
 	box-sizing: content-box
 	max-width: 900px
@@ -29,6 +30,15 @@
 	background-repeat: no-repeat
 	+breakpoint-min($breakpoint-gt-phone)
 		background-size: contain
+
+// Desktop / mobile hidden classes
+.visible-lte-phone
+	display: none !important
+	+breakpoint($breakpoint-lte-phone)
+		display: block !important
+.visible-gt-phone
+	+breakpoint($breakpoint-lte-phone)
+		display: none !important
 
 // Social icon utility classes
 .fi-base
