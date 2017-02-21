@@ -2,57 +2,81 @@
 
 
 .content-section
-	overflow: hidden
-	padding-top: 0
+  overflow: hidden
+  padding-top: 0
 
 .content-section__image-wrapper
-	text-align: center
-	max-width: 400px
-	margin: 0 auto
-	+breakpoint-min($breakpoint-gt-phone)
-		max-width: 350px
+  text-align: center
+  max-width: 400px
+  margin: 0 auto
+  +breakpoint-min($breakpoint-gt-phone)
+    max-width: 350px
 
-	&.image--right
-		+breakpoint-min($breakpoint-gt-phone)
-			float: right
-			margin: 0 0 30px 30px
+  &.image--right
+    +breakpoint-min($breakpoint-gt-phone)
+      float: right
+      margin: 0 0 30px 30px
 
-	&.image--left
-		+breakpoint-min($breakpoint-gt-phone)
-			float: left
-			margin: 0 30px 30px 0
+  &.image--left
+    +breakpoint-min($breakpoint-gt-phone)
+      float: left
+      margin: 0 30px 30px 0
 
 .content-section__image
-	display: inline-block
+  display: inline-block
 
 .content-section__header
-	color: $fontColorBlue
-	font-size: 1.2em
-	+breakpoint-min($breakpoint-gt-phone)
-		margin-top: 0
+  color: $fontColorBlue
+  font-size: 1.2em
+  +breakpoint-min($breakpoint-gt-phone)
+    margin-top: 0
 
 // Features
 .content-section__features-wrapper
-	+breakpoint-min($breakpoint-gt-phone)
-		display: flex
-		justify-content: space-between
+  +breakpoint-min($breakpoint-gt-phone)
+    display: flex
+    justify-content: space-between
 
 .content-section__feature
-	position: relative
-	margin: 0 5px
-	padding: 5px 20px
-	+breakpoint-min($breakpoint-gt-phone)
-		flex: 1
+  position: relative
+  margin: 0 5px
+  padding: 5px 20px
+  +breakpoint-min($breakpoint-gt-phone)
+    flex: 1
 
-	&:before
-		content: ''
-		display: inline-block
-		position: absolute
-		top: 0
-		left: 0
-		background-color: $borderBlue
-		min-width: 50px
-		width: 20%
-		height: 5px
-		+breakpoint-min($breakpoint-gt-phone)
-			width: 100%
+  &:before
+    content: ''
+    display: inline-block
+    position: absolute
+    top: 0
+    left: 0
+    background-color: $borderBlue
+    min-width: 50px
+    width: 20%
+    height: 5px
+    +breakpoint-min($breakpoint-gt-phone)
+      width: 100%
+
+.inline-quote
+  *
+    font-size: 1.2em
+
+  &__content
+    font-weight: $fontWeightLight
+    margin-bottom: 0
+    padding-top: 1em
+
+    &:before, &:after
+      display: inline
+      color: $fontColorBlue
+      font-weight: $fontWeightNormal
+
+    &:before
+      content: '\201C'
+
+    &:after
+      content: '\201D'
+
+  &__byline
+    color: $fontColorBlue
+    margin-top: 0
