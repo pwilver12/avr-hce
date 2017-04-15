@@ -46,8 +46,7 @@ gulp.task('sass', ['clean:css'], () =>
     }))
     .pipe($$.concat('styles.css'))
     .pipe(gulp.dest(paths.dest.css))
-    .pipe(browserSync.stream());
-});
+    .pipe(browserSync.stream()));
 
 gulp.task('js', ['clean:js'], () =>
     browserify({
@@ -65,7 +64,7 @@ gulp.task('js', ['clean:js'], () =>
 
 gulp.task('ejs', () =>
   gulp.src(paths.src.html)
-    .pipe(ejs({
+    .pipe($$.ejs({
       msg: "Hello Gulp!"
     }, {
       ext: '.html'
